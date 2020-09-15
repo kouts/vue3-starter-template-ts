@@ -28,21 +28,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-  data() {
-    return {
-      navbarExpanded: false
+  setup() {
+    const navbarExpanded = ref(false);
+    const toggleNavbar = () => {
+      navbarExpanded.value = !navbarExpanded.value;
     };
-  },
-  methods: {
-    toggleNavbar() {
-      this.navbarExpanded = !this.navbarExpanded;
-    },
-    collapseNavbar() {
-      this.navbarExpanded = false;
-    }
+    const collapseNavbar = () => {
+      navbarExpanded.value = false;
+    };
+    return {
+      navbarExpanded,
+      toggleNavbar,
+      collapseNavbar
+    };
   }
 });
 </script>

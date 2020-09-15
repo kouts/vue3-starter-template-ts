@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
     meta: {
       layout: 'default'
-    }    
+    }
   },
   {
     path: '/about',

@@ -7,14 +7,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
+import { useRoute } from 'vue-router';
 import '@/scss/app.scss';
 
 export default defineComponent({
-  computed: {
-    layout() {
-      return `layout-${this.$route.meta.layout || 'default'}`;
-    }
+  setup() {
+    const route = useRoute();
+    const layout = computed(() => `layout-${route.meta.layout || 'default'}`);
+    return {
+      layout
+    };
   }
 });
 </script>
