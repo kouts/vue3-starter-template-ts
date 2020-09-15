@@ -4,7 +4,7 @@ module.exports = {
     node: true
   },
   extends: [
-    'plugin:vue/vue3-essential',
+    'plugin:vue/vue3-recommended',
     '@vue/standard',
     '@vue/typescript/recommended'
   ],
@@ -12,8 +12,21 @@ module.exports = {
     ecmaVersion: 2020
   },
   rules: {
+    // Vue-cli
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+
+    // Windows style line breaks
+    'linebreak-style': 0,
+
+    // Custom for vue/recommended
+    'vue/max-attributes-per-line': 'off',
+    'vue/html-self-closing': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+
+    // Custom rules standard
+    semi: ['error', 'always'],
+    'space-before-function-paren': ['error', 'never']
   },
   overrides: [
     {
@@ -26,4 +39,4 @@ module.exports = {
       }
     }
   ]
-}
+};
