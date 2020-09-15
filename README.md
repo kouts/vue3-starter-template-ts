@@ -1,4 +1,4 @@
-# typescript-vue3
+# vue3-starter-template-ts
 
 ## Project setup
 ```
